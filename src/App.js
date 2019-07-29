@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <h1>Webpack test</h1>
+      <h1>Webpack testSSS</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
