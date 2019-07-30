@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Inside extends Component {
     render() {
-        console.log('index')
+        console.log('inside')
+
         return (
-            <div className="Index">
+            <div className="Inside">
                 <h1>Webpack test</h1>
             </div>
         )
     }
 }
 
-export default Index
+export default Inside

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Sidetow extends Component {
     render() {
-        console.log('index')
+        console.log('sidetow')
+
         return (
-            <div className="Index">
+            <div className="Sidetow">
                 <h1>Webpack test</h1>
             </div>
         )
     }
 }
 
-export default Index
+export default Sidetow
