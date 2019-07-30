@@ -5,16 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths')
 
 /**
- * 獲取多頁面入口文件
- * @param {String} globPath 文件路徑
- * @param {Boolean} isEnvDevelopment 是否為開發環境
- * @param {Boolean} isEnvProduction 是否為生產環境
+ * 获取多页面入口文件
+ * @param {String} globPath 文件路径
+ * @param {Boolean} isEnvDevelopment 是否为开发环境
+ * @param {Boolean} isEnvProduction 是否为生产环境
  */
 function getMpaConfig(appMpaSrc, isEnvDevelopment, isEnvProduction) {
     const globPath = `${appMpaSrc}/**/render.js`
     const moduleNameReg = /pages\/(.*)\//i
     return glob.sync(globPath).reduce((result, entry) => {
-        // 獲取模組名稱
+        // 获取模块名称
         const moduleName = moduleNameReg.exec(entry)[1]
 
         // 入口配置
@@ -30,6 +30,7 @@ function getMpaConfig(appMpaSrc, isEnvDevelopment, isEnvProduction) {
                 {},
                 {
                     inject: true,
+                    chunks: [moduleName],
                     template: `src/pages/${moduleName}/index.html`,
                     filename: `${moduleName}/index.html`,
                 },

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 class Inside extends Component {
     render() {
-        console.log('inside')
-
+        console.log('Inside')
         return (
             <div className="Inside">
-                <h1>Webpack test</h1>
+                <h1>Webpack test Inside</h1>
             </div>
         )
     }
