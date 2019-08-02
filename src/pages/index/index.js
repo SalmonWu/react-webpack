@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '~/sass/style.sass'
 
 class Index extends Component {
     render() {
