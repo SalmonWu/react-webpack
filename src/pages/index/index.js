@@ -15,6 +15,7 @@ class Index extends Component {
         return (
             <div className="Index">
                 <h1>Webpack test index</h1>
+                <img src={require("~/image/logo.png")} alt='123'></img>
                 <select data-placeholder="Choose a country..."
                     className="chosen-select">
                     <option>1</option>
@@ -25,7 +26,7 @@ class Index extends Component {
                     <option>6</option>
                     <option>7</option>
                 </select>
-            </div>
+            </div >
         )
     }
 }
