@@ -55,7 +55,8 @@ module.exports = function (webpackEnv) {
   // It requires a trailing slash, or the file assets will get an incorrect path.
   // In development, we always serve from the root. This makes config easier.
   const publicPath = isEnvProduction
-    ? paths.servedPath
+    ? paths.servedPath //Original
+    // ? process.env.ROOT_PATH //建置時由外部依據部屬目標 sub directotry 資訊設置
     : isEnvDevelopment && '/';
   // Some apps do not use client-side routing with pushState.
   // For these, "homepage" can be set to "." to enable relative asset paths.
@@ -313,7 +314,9 @@ module.exports = function (webpackEnv) {
               loader: require.resolve('url-loader'),
               options: {
                 limit: 10000,
-                name: 'static/image/[name].[hash:8].[ext]',
+                name: isEnvProduction
+                  ? '../static/images/[name].[hash:8].[ext]'
+                  : isEnvDevelopment && 'static/images/[name].[hash:8].[ext]',
               },
             },
             // Process application JS with Babel.
@@ -450,7 +453,7 @@ module.exports = function (webpackEnv) {
               // by webpacks internal loaders.
               exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               options: {
-                name: 'static/image/[name].[hash:8].[ext]'
+                name: 'static/images/[name].[hash:8].[ext]'
               },
             },
             // ** STOP ** Are you adding a new loader?
